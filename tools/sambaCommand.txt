@@ -1,0 +1,25 @@
+amba Server setting(Rasp4.0)
+   [global]
+      client min protocol = LANMAN1
+      client min protocol = SMB2
+      client max protocol = SMB3
+
+#[printers]
+#[print$]
+
+   [MalwareSector]
+      comment = malware IDC daily archive file share folder
+      path = /mnt/malIDC_repository/malDataCenter/daily/
+      valid users = aoi
+      public = yes
+      read only = yes
+      writable = no
+      create mask = 0700
+
+
+
+* Check Samba server information
+   smbclient -L 192.168.0.14 -U aoi -m SMB2
+ 
+* mount Samba storage into analysis server
+   sudo mount -t cifs -o user=aoi,vers=2.0 //192.168.0.14/MalwareSector /home/cuckoo/Desktop/AMA/malwareSector/

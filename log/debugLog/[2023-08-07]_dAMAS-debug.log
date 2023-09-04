@@ -1,0 +1,1397 @@
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+[34m
+                      __
+  .----..--.--..----.|  |--..-----..-----.
+  |  __||  |  ||  __||    < |  _  ||  _  |
+  |____||_____||____||__|__||_____||_____|[0m
+
+ Cuckoo Sandbox [33m2.0.7[0m
+ www.cuckoosandbox.org
+ Copyright (c) 2010-2018
+
+2023-08-07 13:50:15,351 [cuckoo] DEBUG: Increasing resource limit for number of open files to 1048576
+2023-08-07 13:50:15,351 [cuckoo] ERROR: [31m[31mCu2023-08-07 13:50:16,799 [cuckoo.core.startup] DEBUG: Imported modules...
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: Imported "auxiliary" modules:
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- MITM
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- Reboot
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- Replay
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- Services
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 `-- Sniffer
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: Imported "machinery" modules:
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- vSphere
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- KVM
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- ESX
+2023-08-07 13:50:16,821 [cuckoo.core.startup] DEBUG: 	 |-- XenServer
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- VirtualBox
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- Avd
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- QEMU
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- VMware
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 `-- Physical
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: Imported "processing" modules:
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- AnalysisInfo
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- ApkInfo
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- Baseline
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- BehaviorAnalysis
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- Debug
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- Droidmon
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- Dropped
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- DroppedBuffer
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- Extracted
+2023-08-07 13:50:16,822 [cuckoo.core.startup] DEBUG: 	 |-- GooglePlay
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Irma
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Memory
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- MetaInfo
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- MISP
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- NetworkAnalysis
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- ProcessMemory
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Procmon
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Screenshots
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Snort
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Static
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Strings
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- Suricata
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- TargetInfo
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- TLSMasterSecrets
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 `-- VirusTotal
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: Imported "signatures" modules:
+2023-08-07 13:50:16,823 [cuckoo.core.startup] DEBUG: 	 |-- AndroidAbortBroadcast
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidAccountInfo
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidAppInfo
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidAudio
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidCamera
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidDangerousPermissions
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidDeletedApp
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidDynamicCode
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidEmbeddedApk
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidGooglePlayDiff
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidInstalledApps
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidNativeCode
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidPhoneNumber
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidPrivateInfoQuery
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidReflectionCode
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidRegisteredReceiver
+2023-08-07 13:50:16,824 [cuckoo.core.startup] DEBUG: 	 |-- AndroidShellCommands
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- AndroidSMS
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- AndroidStopProcess
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- ApplicationUsesLocation
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- KnownVirustotal
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- AntiAnalysisJavascript
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- DumpedBuffer
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- DumpedBuffer2
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- EncryptionKeys
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- EvalJS
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- HtmlFlash
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- JsIframe
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- PDFAttachments
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- PDFJavaScript
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- PDFOpenAction
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- PDFOpenActionJS
+2023-08-07 13:50:16,825 [cuckoo.core.startup] DEBUG: 	 |-- SuspiciousJavascript
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- DarwinCodeInjection
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- TaskForPid
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- DeadHost
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkBIND
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkCnCHTTP
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkDNSTXTLookup
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkDynDNS
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkHTTP
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkHTTPPOST
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkICMP
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkIRC
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NetworkSMTP
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- NoLookupCommunication
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- P2PCnC
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- SnortAlert
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- SuricataAlert
+2023-08-07 13:50:16,826 [cuckoo.core.startup] DEBUG: 	 |-- Suspicious_TLD
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- TorGateway
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- WscriptDownloader
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AddsUser
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AddsUserAdmin
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- ADS
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- Adzok
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AlinaFile
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AlineURL
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AllocatesExecuteRemoteProccess
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AllocatesRWX
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AmsiBypass
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- Andromeda
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AntiAnalysisDetectFile
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AntiAVDetectFile
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AntiAVDetectReg
+2023-08-07 13:50:16,827 [cuckoo.core.startup] DEBUG: 	 |-- AntiAVServiceStop
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiAVSRP
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiDBGDevices
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiDBGWindows
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntisandboxClipboard
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiSandboxFile
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiSandboxForegroundWindow
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiSandboxIdleTime
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiSandboxRestart
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiSandboxSleep
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVirusIRMA
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMBios
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMComputernameQuery
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMCPU
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMDiskSize
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMIDE
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMSCSI
+2023-08-07 13:50:16,828 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMServices
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- AntiVMSharedDevice
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- ApplicationExceptionCrash
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- AppLockerBypass
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- APT_Carbunak
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- APT_CloudAtlas
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- apt_sandworm_ip
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- apt_sandworm_url
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- ArdamaxMutexes
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- AthenaHttp
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- AthenaURL
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- Autorun
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- AvastDetectLibs
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- AVDetectionChinaKey
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- BadCerts
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- Bagle
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- Bandook
+2023-08-07 13:50:16,829 [cuckoo.core.startup] DEBUG: 	 |-- banker_bancos
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BankingMutexes
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- Banload
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- Beastdoor
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BeebusMutexes
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BegseabugTDMutexes
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BetabotURL
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- Bifrose
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BitcoinOpenCL
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BitcoinWallet
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BitdefenderDetectLibs
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BlackEnergyMutexes
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- Blackhole
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BlackholeURL
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- Blackice
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BlackposURL
+2023-08-07 13:50:16,830 [cuckoo.core.startup] DEBUG: 	 |-- BlackRevMutexes
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- Blackshades
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BladabindiMutexes
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BochsDetectKeys
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- Bootkit
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- Bottilda
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BozokKey
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- browser_startpage
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BrowserSecurity
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BrowserStealer
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- Btcbotnet
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- Bublik
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BuildLangID
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BuzusMutexes
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- BypassFirewall
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- c24URL
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- CarberpMutexes
+2023-08-07 13:50:16,831 [cuckoo.core.startup] DEBUG: 	 |-- Ceatrg
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ChanitorMutexes
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- CheckIP
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ChecksDebugger
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ChecksKernelDebugger
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ClearPermissionEventLogs
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ClearsEventLogs
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ClickfraudCookies
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- cloud_mediafire
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- cloud_wetransfer
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- CloudFlare
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- CloudGoogle
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- CoinminerMutexes
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ComRAT
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- ConsoleOutput
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- Crash
+2023-08-07 13:50:16,832 [cuckoo.core.startup] DEBUG: 	 |-- CreatesAutorunInf
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesDocument
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesExe
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesHiddenFile
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesLargeKey
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesNullRegistryEntry
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesService
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesShortcut
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesSuspiciousProcess
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CreatesUserFolderEXE
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CredentialDumpingLsass
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CredentialDumpingLsassAccess
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- Cridex
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CryptGenKey
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- Cryptolocker
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CryptoMiningStratumCommand
+2023-08-07 13:50:16,833 [cuckoo.core.startup] DEBUG: 	 |-- CuckooDetectFiles
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Cybergate
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Dapato
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Darkcloud
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DarkddosMutexes
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Darkshell
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Ddos556
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Decay
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DecebalMutexes
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DeepFreezeMutex
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DeletesExecutedFiles
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DelfTrojan
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DEPHeapBypass
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DEPStackBypass
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DerusbiMutexes
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Dexter
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- Dibik
+2023-08-07 13:50:16,834 [cuckoo.core.startup] DEBUG: 	 |-- DirtJumper
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisableCmd
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisableRegedit
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesAppLaunch
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesBrowserWarn
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesIEHTTP2
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesProxy
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesSecurity
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesSPDYChrome
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesSPDYFirefox
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesSPDYIE
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesSystemRestore
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesWER
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisablesWindowsUpdate
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DisableTaskMgr
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- DiskInformation
+2023-08-07 13:50:16,835 [cuckoo.core.startup] DEBUG: 	 |-- Dns_Freehosting_Domain
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- dnsserver_dynamic
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- DocumentClose
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- DocumentOpen
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- DoFoil
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- DownloaderCabby
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Dridex_APIs
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Drive
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Drive2
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- DriverLoad
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- DropBox
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Dropper
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Dyreza
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- EclipseMutexes
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Emotet
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Emotet_APIs
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- Evilbot
+2023-08-07 13:50:16,836 [cuckoo.core.startup] DEBUG: 	 |-- ExcelDataLinks
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- ExeAppData
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- ExecBitsAdmin
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- ExecWaitFor
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- exp_3322_dom
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- Expiro
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- ExploitHeapspray
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- ExploitKitMutexes
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- FakeAVMutexes
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- FakeAVMutexes
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- FakeRean
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- FarFli
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- FesberMutexes
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- Fingerprint
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- Flame
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- Flystudio
+2023-08-07 13:50:16,837 [cuckoo.core.startup] DEBUG: 	 |-- FortinetDetectFiles
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- FTPStealer
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- Fynloski
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- Gaelicum
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- Ghostbot
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- HasAuthenticode
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- HasOfficeEps
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- HasPdb
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- HasWMI
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- Hesperbot
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- Hidden_Window
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- Hikit
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- HookMouse
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- Hupigon
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- HyperVDetectKeys
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- IcePoint
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- im_btb
+2023-08-07 13:50:16,838 [cuckoo.core.startup] DEBUG: 	 |-- im_qq
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- IMStealer
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InceptionAPT
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- Infinity
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InfoStealerClipboard
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionCreateRemoteThread
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionExplorer
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionModifiesMemory
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionNetworkTraffic
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionProcessSearch
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionQueueApcThread
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionRunPE
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionWriteMemory
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InjectionWriteMemoryEXE
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InstalledApps
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InstallsAppInit
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InstallsBHO
+2023-08-07 13:50:16,839 [cuckoo.core.startup] DEBUG: 	 |-- InstallsWinpcap
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- IPKillerMutexes
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- Ircbrute
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- ISRstealerURL
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- iStealerURL
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- JackPOSFile
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- JackposURL
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- JavaScriptCommandline
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- JeefoMutexes
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- Jewdo
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- JintorMutexes
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- JorikTrojan
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- Karagany
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- Karakum
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- Katusha
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- KelihosBot
+2023-08-07 13:50:16,840 [cuckoo.core.startup] DEBUG: 	 |-- Keylogger
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Kilim
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Killdisk
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- KnownVirustotal
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Koobface
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Koutodoor
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- KovterBot
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- KrepperMutexes
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- KuluozMutexes
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Likseput
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- LocatesBrowser
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- LocatesSniffer
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Lockscreen
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- LolBot
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Luder
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Madness
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- Madness
+2023-08-07 13:50:16,841 [cuckoo.core.startup] DEBUG: 	 |-- MadnessURL
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MaganiaMutexes
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MailStealer
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MaliciousDocumentURLs
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MartianCommandProcess
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MegaUpload
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MemoryAvailable
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MemoryProtectionRX
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MetasploitShellcode
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- Minerbot
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- miningpool
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- MircFile
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesBootConfig
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesCertificates
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesDesktopWallpaper
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesFirefoxConfiguration
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesProxyAutoConfig
+2023-08-07 13:50:16,842 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesProxyOverride
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesProxyWPAD
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- ModifiesUACNotify
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- ModifySecurityCenterWarnings
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- MovesSelf
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Multiple_UA
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- MyBot
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Nakbot
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Napolar
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Nebuler
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Netobserve
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Netshadow
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Netwire
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- NetworkAdapters
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- NetworkDocumentFile
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- NetworkEXE
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- Nitol
+2023-08-07 13:50:16,843 [cuckoo.core.startup] DEBUG: 	 |-- NjRat
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- NtSetContextThreadRemote
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- Nymaim_APIs
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- ObfusMutexes
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeCheckName
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeCheckProjectName
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeCheckVersion
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeCheckWindow
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeCountDirectories
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeCreateObject
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeDDE
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeEpsStrings
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeHttpRequest
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeIndirectCall
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficePackager
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficePlatformDetect
+2023-08-07 13:50:16,844 [cuckoo.core.startup] DEBUG: 	 |-- OfficeRecentFiles
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- OfficeVulnerableGuid
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- OfficeVulnModules
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- Oldrea
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PackerEntropy
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- Palevo
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- ParallelsDetectKeys
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- ParallelsDetectWindow
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- Pasta
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PcClientMutexes
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PEFeatures
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PEIDPacker
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PerfLogger
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PersistenceBootexecute
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PersistenceRegistryEXE
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PersistenceRegistryJavaScript
+2023-08-07 13:50:16,845 [cuckoo.core.startup] DEBUG: 	 |-- PersistenceRegistryPowershell
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PEUnknownResourceName
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- Phorpiex
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- Pidief
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- Plugx
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- Poebot
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PoisonIvy
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- Polymorphic
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- Ponfoy
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PonyURL
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PosCardStealerURL
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- Powerfun
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PowershellBitsTransfer
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PowershellCcDns
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PowershellDdiRc4
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PowershellDFSP
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PowershellDI
+2023-08-07 13:50:16,846 [cuckoo.core.startup] DEBUG: 	 |-- PowershellDownload
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- PowershellEmpire
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- PowershellMeterpreter
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- PowershellRegAdd
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- PowershellRequest
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- PowershellUnicorn
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- Powerworm
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- Prinimalka
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- PrivilegeLUIDCheck
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- ProcessInterest
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- ProcessMartian
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- ProcessNeeded
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- ProcMemDumpIPURLs
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- ProcMemDumpTorURLs
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- ProcMemDumpURLs
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- ProcMemDumpYara
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- Psyokym
+2023-08-07 13:50:16,847 [cuckoo.core.startup] DEBUG: 	 |-- PuceMutexes
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- PutterpandaMutexes
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- Putty
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- PWDumpFile
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- Pykse
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- Qakbot
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- QueriesInstalledApps
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- Ragebot
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- RaisesException
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- Ramnit
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- RamsomwareFileMoves
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- ransomware_viruscoder
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareAppendsExtension
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareBcdedit
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareDroppedFiles
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareExtensions
+2023-08-07 13:50:16,848 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareFiles
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareMassFileDelete
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareMessage
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareMessageOCR
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareRecyclebin
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareShadowcopy
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RansomwareWbadmin
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RapidShare
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- rat_fexel_ip
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- rat_naid_ip
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RatSiggen
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RBot
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RdpMutexes
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- ReadsUserAgent
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- Recon_Beacon
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RemovesZoneIdADS
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- Renocide
+2023-08-07 13:50:16,849 [cuckoo.core.startup] DEBUG: 	 |-- RenosTrojan
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- ResumeThread
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- Rovnix
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- RTFCharacterSet
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- RTFUnknownVersion
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- Runbu
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- RunouceMutexes
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- Ruskill
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- Sadbot
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- SandboxieDetect
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- SandboxJoeAnubisDetectFiles
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- SDBot
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- SelfDeleteBat
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- Senna
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- Shadowbot
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- SharingRGhost
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- SharpStealerURL
+2023-08-07 13:50:16,850 [cuckoo.core.startup] DEBUG: 	 |-- ShellcodeWriteProcessMemory
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Shiz
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Shylock
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- SipStun
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Smtp_GMail
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Smtp_Live
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Smtp_Mail_Ru
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Smtp_Yahoo
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- SolarURL
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- SpyEyeMutexes
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- SpyeyeURL
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- SpynetRat
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Spyrecorder
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- StackPivot
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- StackPivotShellcodeAPIs
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- StackPivotShellcodeCreateProcess
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- Staser
+2023-08-07 13:50:16,851 [cuckoo.core.startup] DEBUG: 	 |-- StealthChildProc
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- StealthHiddenExtension
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- StealthHiddenFile
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- StealthHiddenIcons
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- StealthHideNotifications
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- StealthSystemProcName
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- StopsService
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SunbeltDetectFiles
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SunBeltSandboxDetect
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SuspiciousCommandTools
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SuspiciousPowershell
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SuspiciousWriteEXE
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SweetorangeMutexes
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- Swrort
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SysInternalsToolsUsage
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SystemInfo
+2023-08-07 13:50:16,852 [cuckoo.core.startup] DEBUG: 	 |-- SystemMetrics
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TapiDpMutexes
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TDSSBackdoor
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TeamviewerRat
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TerminatesRemoteProcess
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- ThreatTrackDetectFiles
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TinbaMutexes
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TnegaMutexes
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- Tor
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TorHiddenService
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- Travnet
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- Trogbot
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TrojanJorik
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TrojanLethic
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TrojanLethic
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- trojanmrblack
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TrojanRedosru
+2023-08-07 13:50:16,853 [cuckoo.core.startup] DEBUG: 	 |-- TrojanSysn
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- trojanyoddos
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- TufikMutexes
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- Turkojan
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- TurlaCarbon
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- UFRStealer
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- Unhook
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- Upatre
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- UpatreTDMutexes
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- UPXCompressed
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- UrkShortCN
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- URLFile
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- URLSpy
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- UroburosFile
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- UroburosMutexes
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- Urxbot
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- UsesWindowsUtilities
+2023-08-07 13:50:16,854 [cuckoo.core.startup] DEBUG: 	 |-- Vanbot
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VBInject
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VBoxDetectACPI
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VBoxDetectDevices
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VBoxDetectFiles
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VBoxDetectKeys
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VBoxDetectProvname
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VBoxDetectWindow
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- Vertex
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VertexSolarURL
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VirtualPCDetect
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VirtualPCDetectWindow
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VirtualPCIllegalInstruction
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- Virut
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VMFirmware
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VMPPacked
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VMWareDetectFiles
+2023-08-07 13:50:16,855 [cuckoo.core.startup] DEBUG: 	 |-- VMWareDetectKeys
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VMwareDetectWindow
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VMWareInInstruction
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VncMutexes
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VNLoaderURL
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolDevicetree1
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolHandles1
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolLdrModules1
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolLdrModules2
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolMalfind1
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolModscan1
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolSvcscan1
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolSvcscan2
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VolSvcscan3
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- VPCDetectKeys
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- Wakbot
+2023-08-07 13:50:16,856 [cuckoo.core.startup] DEBUG: 	 |-- WarbotURL
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- Whimoo
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- Win32ProcessCreate
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WineDetect
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WinSCP
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WinSxsBot
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WMIAntiVM
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WMIPersistance
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WMIService
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WormAllaple
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- WormKolabc
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- XenDetectKeys
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- XtremeRAT
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- Xworm
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- Zegost
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- ZeusMutexes
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- ZeusP2P
+2023-08-07 13:50:16,857 [cuckoo.core.startup] DEBUG: 	 |-- ZeusURL
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 `-- ZoneID
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: Imported "reporting" modules:
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- ElasticSearch
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- Feedback
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- JsonDump
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- Mattermost
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- MISP
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- Moloch
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- MongoDB
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 |-- Notification
+2023-08-07 13:50:16,858 [cuckoo.core.startup] DEBUG: 	 `-- SingleFile
+2023-08-07 13:50:16,863 [cuckoo.core.startup] DEBUG: Checking for locked tasks..
+2023-08-07 13:50:16,871 [cuckoo.core.startup] DEBUG: Checking for pending service tasks..
+2023-08-07 13:50:16,874 [cuckoo.core.startup] DEBUG: Initializing Yara...
+2023-08-07 13:50:17,551 [cuckoo.core.startup] DEBUG: 	 |-- binaries 000_common_rules.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_APT1.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_APT10.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_APT15.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_APT17.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_APT29_Grizzly_Steppe.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_APT3102.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_APT9002.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Backspace.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Bestia.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Blackenergy.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Bluetermite_Emdivi.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_C16.yar
+2023-08-07 13:50:17,552 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Carbanak.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Careto.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Casper.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_CheshireCat.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Cloudduke.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Cobalt.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Codoso.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_CrashOverride.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_DPRK_ROKRAT.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_DeepPanda_Anthem.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_DeputyDog.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Derusbi.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Dubnium.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Duqu2.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_EQUATIONGRP.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Emissary.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_EnergeticBear_backdoored_ssh.yar
+2023-08-07 13:50:17,553 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Equation.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_FVEY_ShadowBrokers_Jan17_Screen_Strings.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_FiveEyes.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Grasshopper.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Greenbug.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Grizzlybear_uscert.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_HackingTeam.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Hellsing.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_HiddenCobra.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Hikit.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Industroyer.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Irontiger.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Kaba.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Ke3Chang_TidePool.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_KeyBoy.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_LotusBlossom.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Minidionis.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Mirage.yar
+2023-08-07 13:50:17,554 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Molerats.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Mongall.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_MoonlightMaze.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_NGO.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_OPCleaver.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Oilrig.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_OpClandestineWolf.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_OpDustStorm.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_OpPotao.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_PCclient.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Passcv.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Pipcreat.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Platinum.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Poseidon_Group.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Prikormka.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_PutterPanda.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_RedLeaves.yar
+2023-08-07 13:50:17,555 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Regin.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_RemSec.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Sauron.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Sauron_extras.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Scarab_Scieron.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Seaduke.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Shamoon_StoneDrill.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Snowglobe_Babar.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Sofacy_Bundestag.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Sofacy_Fysbis.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Sofacy_Jun16.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Sphinx_Moth.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Stuxnet.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Terracota.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_ThreatGroup3390.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_TradeSecret.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Turla_Neuron.yar
+2023-08-07 13:50:17,556 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Turla_RUAG.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_UP007_SLServer.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Unit78020.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Uppercut.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Waterbug.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_WildNeutron.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Windigo_Onimiki.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_Winnti.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_WoolenGoldfish.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_eqgrp_apr17.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_fancybear_dnc.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_fancybear_downdelph.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries APT_furtim.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2010-0805.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2010-0887.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2010-1297.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2012-0158.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2013-0074.yar
+2023-08-07 13:50:17,557 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2013-0422.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2015-1701.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2015-2426.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2015-2545.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2015-5119.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2016-5195.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2017-11882.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2018-20250.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries CVE-2018-4878.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries DeltaCharlie.yara
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Angler.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Blackhole.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_BleedingLife.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Crimepack.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Eleonore.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Fragus.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Phoenix.yar
+2023-08-07 13:50:17,558 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Sakura.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_ZeroAcces.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Zerox88.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries EK_Zeus.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries EMAIL_Cryptowall.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries EXPERIMENTAL_Beef.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries Email_PHP_Mailer.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries Email_fake_it_maintenance_bulletin.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries Email_generic_phishing.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries Email_quota_limit_warning.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries GEN_PowerShell.yar
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries HotelAlfa.yara
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaAlfa.yara
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaBravo.yara
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaCharlie.yara
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaDelta.yara
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaEcho.yara
+2023-08-07 13:50:17,559 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaGolf.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaHotel.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaJuliett.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries IndiaWhiskey.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries JJencode.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries Javascript_exploit_and_obfuscation.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries KiloAlfa.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries LimaAlfa.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries LimaBravo.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries LimaCharlie.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries LimaDelta.yara
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_ATMPot.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_ATM_HelloWorld.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_AgentTesla.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_AgentTesla_SMTP.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_AlMashreq.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Alina.yar
+2023-08-07 13:50:17,560 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Andromeda.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Arkei.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Athena.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Atmos.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_BackdoorSSH.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Backoff.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Bangat.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Batel.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_BlackRev.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_BlackWorm.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Boouset.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Bublik.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Buzus_Softpulse.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_CAP_HookExKeylogger.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Chicken.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Citadel.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Cloaking.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Cookies.yar
+2023-08-07 13:50:17,561 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Corkow.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Cxpid.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Cythosia.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_DDoSTf.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Derkziel.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Dexter.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_DiamondFox.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_DirtJumper.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Eicar.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Elex.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Elknot.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Emotet.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Empire.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Enfal.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Exploit_UAC_Elevators.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Ezcob.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_F0xy.yar
+2023-08-07 13:50:17,562 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_FALLCHILL.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_FUDCrypt.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_FakeM.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Fareit.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Favorite.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Furtim.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Gafgyt.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Genome.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Glasses.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Gozi.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Grozlex.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Hajime.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Hsdfihdf_banking.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_IMuler.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_IcedID.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Iexpl0ree.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Install11.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Intel_Virtualization.yar
+2023-08-07 13:50:17,563 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_IotReaper.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Jolob_Backdoor.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_KINS.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Kelihos.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_KeyBase.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Korlia.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Korplug.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Kovter.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Kraken.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Kwampirs.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_LURK0.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Lateral_Movement.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Lenovo_Superfish.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_LinuxBew.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_LinuxHelios.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_LinuxMoose.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_LostDoor.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_LuaBot.yar
+2023-08-07 13:50:17,564 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_LuckyCat.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_MSILStealer.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_MacControl.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_MacGyver.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Madness.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Magento_backend.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Magento_frontend.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Magento_suspicious.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Mailers.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_MedusaHTTP_2019.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Miancha.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_MiniAsp3_mem.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Mirai.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Miscelanea.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Miscelanea_Linux.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Monero_Miner_installer.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_NSFree.yar
+2023-08-07 13:50:17,565 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Naikon.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Naspyupdate.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_NetTraveler.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_NionSpy.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Notepad.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_OSX_Leverage.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Odinaff.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Olyx.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_PE_sections.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_PittyTiger.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_PolishBankRat.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Ponmocup.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Pony.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Predator.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_PubSab.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_PurpleWave.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_PyPI.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Pyinstaller.yar
+2023-08-07 13:50:17,566 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Pyinstaller_OSX.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Quarian.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Regsubdat.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Retefe.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Rockloader.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Rooter.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Rovnix.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Safenet.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Sakurel.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Sayad.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Scarhikn.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Sendsafe.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Shamoon.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Shifu.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Skeleton.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Spora.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Sqlite.yar
+2023-08-07 13:50:17,567 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Stealer.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Surtr.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_T5000.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_TRITON_HATMAN.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_TRITON_ICS_FRAMEWORK.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Tedroo.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Tinba.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_TreasureHunt.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_TrickBot.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Trumpbot.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Upatre.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Urausy.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Vidgrab.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Virut_FileInfector_UNK_VERSION.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Volgmer.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Wabot.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Warp.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Wimmie.yar
+2023-08-07 13:50:17,568 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_XHide.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_XMRIG_Miner.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_XOR_DDos.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Yayih.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Yordanyan_ActiveAgent.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Zegost.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_Zeus.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_adwind_RAT.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_hancitor.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_kirbi_mimikatz.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_kpot.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_marap.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_shifu_shiz.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_sitrof_fortis_scar.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_viotto_keylogger.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MALW_xDedic_marketplace.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries MalConfScan.yar
+2023-08-07 13:50:17,569 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_APT10_MenuPass.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_APT19_CVE-2017-0199.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_APT_OLE_JSRat.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_CVE-2017-0199.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_CVE_2017_11882.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_CVE_2017_8759.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_Contains_VBE_File.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_DDE.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_Dridex.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_Hidden_PE_file.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_MIME_ActiveMime_b64.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_PDF.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_PowerPointMouse.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_Suspicious_OLE_target.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_UserForm.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_VBA_macro_code.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_Word_2007_XML_Flat_OPC.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_hancitor_dropper.yar
+2023-08-07 13:50:17,570 [cuckoo.core.startup] DEBUG: 	 |-- binaries Maldoc_malrtf_ole2link.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS_Bernhard.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS_BruteforcingBot.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS_Easterjack.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS_FastPOS.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS_LogPOS.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS_MalumPOS.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries POS_Mozart.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries PapaAlfa.yara
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_.CRYPTXXX.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_777.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Alpha.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_BadRabbit.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Cerber.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Comodosec.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Crypren.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_CryptoNar.yar
+2023-08-07 13:50:17,571 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Cryptolocker.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_DMALocker.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_DoublePulsar_Petya.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Erebus.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_GPGQwerty.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_GoldenEye.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Locky.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_MS17-010_Wannacrypt.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Maze.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_PetrWrap.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Petya.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Petya_MS17_010.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Pico.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Revix.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_SamSam.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Satana.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Shiva.yar
+2023-08-07 13:50:17,572 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Sigma.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Snake.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Stampado.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_TeslaCrypt.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_Tox.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_acroware.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_jeff_dev.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_locdoor.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_screenlocker_5h311_1nj3c706.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_shrug2.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RANSOM_termite.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Adwind.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Adzok.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Asyncrat.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_BlackShades.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Bolonyokte.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Bozok.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Cerberus.yar
+2023-08-07 13:50:17,573 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Crimson.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_CrossRAT.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_CyberGate.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_DarkComet.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_FlyingKitten.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Gh0st.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Gholee.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Glass.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Havex.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Hizor.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Indetectables.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Inocnation.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Meterpreter_Reverse_Tcp.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Nanocore.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_NetwiredRC.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Njrat.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Orcus.yar
+2023-08-07 13:50:17,574 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_PlugX.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_PoetRATDoc.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_PoetRATPython.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_PoisonIvy.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Ratdecoders.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Sakula.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_ShadowTech.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Shim.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Terminator.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_Xtreme.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_ZoxPNG.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_jRAT.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_xRAT.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RAT_xRAT20.yar
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoAlfa.yara
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoBravo.yara
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoCharlie.yara
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoDelta.yara
+2023-08-07 13:50:17,575 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoEcho.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoFoxtrot_mod.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoGolf_mod.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoHotel.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries RomeoWhiskey.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries SierraAlfa.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries SierraBravo.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries SierraCharlie.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries SierraJuliettMikeOne.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries SierraJuliettMikeTwo.yara
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Chinese_Hacktools.yar
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Dubrute.yar
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_FinFisher_.yar
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Gen_powerkatz.yar
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_PassTheHash.yar
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Powerstager.yar
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Pwdump.yar
+2023-08-07 13:50:17,576 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Redteam_Tools_by_GUID.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Redteam_Tools_by_Name.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Solarwinds_credential_stealer.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_THOR_HackTools.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_Wineggdrop.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries TOOLKIT_exe2hex_payload.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries TangoAlfa.yara
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries TangoBravo.yara
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries UniformAlfa.yara
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries UniformJuliett.yara
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WShell_APT_Laudanum.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WShell_ASPXSpy.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WShell_ChinaChopper.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WShell_Drupalgeddon2_icos.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WShell_PHP_Anuna.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WShell_PHP_in_images.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WShell_THOR_Webshells.yar
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WhiskeyAlfa.yara
+2023-08-07 13:50:17,577 [cuckoo.core.startup] DEBUG: 	 |-- binaries WhiskeyBravo_mod.yara
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries WhiskeyCharlie.yara
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries WhiskeyDelta.yara
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries Wshell_ChineseSpam.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries Wshell_fire2013.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries antidebug_antivm.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries attachment.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries bank_rule.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries base64.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries capabilities.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries cert_wiper.yara
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries crypto_signatures.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries domain.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries email_Ukraine_BE_powerattack.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries embedded.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries extortion_email.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries filetypes.yar
+2023-08-07 13:50:17,578 [cuckoo.core.startup] DEBUG: 	 |-- binaries general.yara
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries image.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries ip.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries magic.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries maldoc_somerules.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries packer.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries packer_compiler_signatures.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries peid.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries scam.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries sharedcode.yara
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries shellcodes.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries suicidescripts.yara
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries suspicious_strings.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries tweetable-polyglot-png.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries url.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries urls.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries virustotal.yar
+2023-08-07 13:50:17,579 [cuckoo.core.startup] DEBUG: 	 |-- binaries vmdetect.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts applocker_bypass.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powerfun.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_AMSI.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_BITS_transfer.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_ddi_rc4.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_dfsp.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_di.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_empire.yar
+2023-08-07 13:50:17,581 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_meterpreter.yar
+2023-08-07 13:50:17,582 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_txt_c2.yar
+2023-08-07 13:50:17,582 [cuckoo.core.startup] DEBUG: 	 |-- scripts powershell_unicorn.yar
+2023-08-07 13:50:17,582 [cuckoo.core.startup] DEBUG: 	 |-- scripts powerworm.yar
+2023-08-07 13:50:17,582 [cuckoo.core.startup] DEBUG: 	 |-- shellcode metasploit.yar
+2023-08-07 13:50:17,583 [cuckoo.core.startup] DEBUG: 	 |-- office dde.yar
+2023-08-07 13:50:17,583 [cuckoo.core.startup] DEBUG: 	 |-- office ole.yar
+2023-08-07 13:50:17,620 [cuckoo.core.scheduler] INFO: Using "virtualbox" as machine manager
+2023-08-07 13:50:17,896 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1
+2023-08-07 13:50:18,033 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to snapshot1
+2023-08-07 13:50:18,683 [cuckoo.core.scheduler] INFO: Loaded 1 machine/s
+2023-08-07 13:50:18,695 [cuckoo.core.scheduler] INFO: Waiting for analysis tasks.
+2023-08-07 13:51:22,720 [cuckoo.core.scheduler] DEBUG: Processing task #7
+2023-08-07 13:51:22,724 [cuckoo.core.scheduler] INFO: Starting analysis of FILE "Install.exe" (task #7, options "route=internet")
+2023-08-07 13:51:22,775 [cuckoo.core.scheduler] INFO: Task #7: acquired machine cuckoo1 (label=cuckoo1)
+2023-08-07 13:51:22,776 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #7
+2023-08-07 13:51:22,776 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay
+2023-08-07 13:51:22,782 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 7157 (interface=vboxnet0, host=192.168.56.101)
+2023-08-07 13:51:22,783 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer
+2023-08-07 13:51:22,808 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo1
+2023-08-07 13:51:23,111 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to snapshot1
+2023-08-07 13:51:40,580 [cuckoo.core.guest] INFO: Starting analysis #7 on guest (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 13:51:41,582 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 13:51:42,585 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 13:51:43,592 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 13:51:43,636 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 13:51:44,656 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 13:51:44,823 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo1, ip=192.168.56.101, monitor=latest, size=3884763)
+2023-08-07 13:51:45,063 [cuckoo.core.resultserver] DEBUG: Task #7: live log analysis.log initialized.
+2023-08-07 13:51:45,530 [cuckoo.core.resultserver] DEBUG: Task #7 is sending a BSON stream
+2023-08-07 13:51:45,772 [cuckoo.core.resultserver] DEBUG: Task #7 is sending a BSON stream
+2023-08-07 13:51:46,705 [cuckoo.core.resultserver] DEBUG: Task #7: File upload for 'shots/0001.jpg'
+2023-08-07 13:51:46,714 [cuckoo.core.resultserver] DEBUG: Task #7 uploaded file length: 160574
+2023-08-07 13:51:47,724 [cuckoo.core.resultserver] DEBUG: Task #7: File upload for 'shots/0002.jpg'
+2023-08-07 13:51:47,736 [cuckoo.core.resultserver] DEBUG: Task #7 uploaded file length: 160753
+2023-08-07 13:51:48,748 [cuckoo.core.resultserver] DEBUG: Task #7: File upload for 'shots/0003.jpg'
+2023-08-07 13:51:48,758 [cuckoo.core.resultserver] DEBUG: Task #7 uploaded file length: 175169
+2023-08-07 13:51:49,764 [cuckoo.core.resultserver] DEBUG: Task #7: File upload for 'shots/0004.jpg'
+2023-08-07 13:51:49,778 [cuckoo.core.resultserver] DEBUG: Task #7 uploaded file length: 171420
+2023-08-07 13:51:49,784 [cuckoo.core.resultserver] DEBUG: Task #7 had connection reset for <Context for LOG>
+2023-08-07 13:51:50,042 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully
+2023-08-07 13:51:50,053 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Replay
+2023-08-07 13:51:50,097 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer
+2023-08-07 13:52:08,102 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/cuckoo/.cuckoo/storage/analyses/7/memory.dmp
+2023-08-07 13:52:08,103 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1
+2023-08-07 13:52:12,252 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.56.101 for task #7
+2023-08-07 13:52:12,283 [cuckoo.core.scheduler] DEBUG: Released database task #7
+2023-08-07 13:52:12,289 [cuckoo.core.scheduler] INFO: [36mTask #7: analysis procedure completed[0m
+2023-08-07 14:10:04,663 [cuckoo.core.scheduler] DEBUG: Processing task #8
+2023-08-07 14:10:04,667 [cuckoo.core.scheduler] INFO: Starting analysis of FILE "3d8d784dfd98e8943b519adb3c2457fde8f3f664472c70c5f14b0ba113b4cec2.exe" (task #8, options "route=internet")
+2023-08-07 14:10:04,689 [cuckoo.core.scheduler] INFO: Task #8: acquired machine cuckoo1 (label=cuckoo1)
+2023-08-07 14:10:04,689 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #8
+2023-08-07 14:10:04,689 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay
+2023-08-07 14:10:04,695 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 8435 (interface=vboxnet0, host=192.168.56.101)
+2023-08-07 14:10:04,695 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer
+2023-08-07 14:10:04,709 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo1
+2023-08-07 14:10:04,913 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to snapshot1
+2023-08-07 14:10:19,767 [cuckoo.core.guest] INFO: Starting analysis #8 on guest (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:10:20,769 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:10:21,790 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:10:22,797 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:10:22,809 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:10:22,822 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo1, ip=192.168.56.101, monitor=latest, size=3884763)
+2023-08-07 14:10:23,023 [cuckoo.core.resultserver] DEBUG: Task #8: live log analysis.log initialized.
+2023-08-07 14:10:23,299 [cuckoo.core.resultserver] DEBUG: Task #8 is sending a BSON stream
+2023-08-07 14:10:23,549 [cuckoo.core.resultserver] DEBUG: Task #8 is sending a BSON stream
+2023-08-07 14:10:24,455 [cuckoo.core.resultserver] DEBUG: Task #8: File upload for 'shots/0001.jpg'
+2023-08-07 14:10:24,466 [cuckoo.core.resultserver] DEBUG: Task #8 uploaded file length: 168746
+2023-08-07 14:10:28,000 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:10:33,054 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:10:38,114 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:10:43,175 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:10:48,233 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:10:53,288 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:10:58,347 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:11:03,403 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:11:08,456 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:11:13,513 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #8 still processing
+2023-08-07 14:11:13,775 [cuckoo.core.resultserver] DEBUG: Task #8: File upload for 'memory/168-1.dmp'
+2023-08-07 14:11:13,782 [cuckoo.core.resultserver] DEBUG: Task #8 uploaded file length: 4309568
+2023-08-07 14:11:13,846 [cuckoo.core.resultserver] DEBUG: Task #8 is sending a BSON stream
+2023-08-07 14:11:14,713 [cuckoo.core.resultserver] DEBUG: Task #8: File upload for 'shots/0002.jpg'
+2023-08-07 14:11:14,724 [cuckoo.core.resultserver] DEBUG: Task #8 uploaded file length: 176551
+2023-08-07 14:11:15,740 [cuckoo.core.resultserver] DEBUG: Task #8: File upload for 'shots/0003.jpg'
+2023-08-07 14:11:15,751 [cuckoo.core.resultserver] DEBUG: Task #8 uploaded file length: 173053
+2023-08-07 14:11:16,532 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully
+2023-08-07 14:11:16,537 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Replay
+2023-08-07 14:11:16,597 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer
+2023-08-07 14:11:32,794 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/cuckoo/.cuckoo/storage/analyses/8/memory.dmp
+2023-08-07 14:11:32,800 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1
+2023-08-07 14:11:32,885 [cuckoo.core.resultserver] DEBUG: Task #8: File upload for 'shots/0004.jpg'
+2023-08-07 14:11:32,977 [cuckoo.core.resultserver] DEBUG: Task #8 uploaded file length: 178138
+2023-08-07 14:11:32,986 [cuckoo.core.resultserver] DEBUG: Task #8 had connection reset for <Context for LOG>
+2023-08-07 14:11:38,354 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.56.101 for task #8
+2023-08-07 14:11:38,515 [cuckoo.core.scheduler] DEBUG: Released database task #8
+2023-08-07 14:11:38,896 [cuckoo.core.scheduler] INFO: [36mTask #8: analysis procedure completed[0m
+2023-08-07 14:11:39,435 [cuckoo.core.scheduler] DEBUG: Processing task #9
+2023-08-07 14:11:39,508 [cuckoo.core.scheduler] INFO: Starting analysis of FILE "6987377a1118969bd5be9bc61cbad585f85fcb41f7f52cf8d9998ac3241f87eb.exe" (task #9, options "route=internet")
+2023-08-07 14:11:39,535 [cuckoo.core.scheduler] INFO: Task #9: acquired machine cuckoo1 (label=cuckoo1)
+2023-08-07 14:11:39,536 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #9
+2023-08-07 14:11:39,536 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay
+2023-08-07 14:11:39,542 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 8702 (interface=vboxnet0, host=192.168.56.101)
+2023-08-07 14:11:39,543 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer
+2023-08-07 14:11:39,565 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo1
+2023-08-07 14:11:39,623 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to snapshot1
+2023-08-07 14:11:56,497 [cuckoo.core.guest] INFO: Starting analysis #9 on guest (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:11:57,503 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:11:58,510 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:11:59,517 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:11:59,522 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:11:59,562 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo1, ip=192.168.56.101, monitor=latest, size=3884763)
+2023-08-07 14:11:59,777 [cuckoo.core.resultserver] DEBUG: Task #9: live log analysis.log initialized.
+2023-08-07 14:12:00,065 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:00,519 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:01,216 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0001.jpg'
+2023-08-07 14:12:01,229 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 169047
+2023-08-07 14:12:04,755 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:06,397 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0002.jpg'
+2023-08-07 14:12:06,414 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 170241
+2023-08-07 14:12:07,458 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0003.jpg'
+2023-08-07 14:12:07,472 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 169083
+2023-08-07 14:12:09,809 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:13,769 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:13,917 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:14,647 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0004.jpg'
+2023-08-07 14:12:14,657 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 171077
+2023-08-07 14:12:14,853 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:15,426 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:15,581 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:15,664 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0005.jpg'
+2023-08-07 14:12:15,674 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 172498
+2023-08-07 14:12:16,678 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0006.jpg'
+2023-08-07 14:12:16,689 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 172146
+2023-08-07 14:12:19,107 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:19,725 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0007.jpg'
+2023-08-07 14:12:19,742 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 170161
+2023-08-07 14:12:19,914 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:20,788 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0008.jpg'
+2023-08-07 14:12:20,805 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 169269
+2023-08-07 14:12:24,948 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:29,969 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:31,848 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0009.jpg'
+2023-08-07 14:12:31,862 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 169754
+2023-08-07 14:12:32,879 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0010.jpg'
+2023-08-07 14:12:32,896 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 169269
+2023-08-07 14:12:34,987 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:34,991 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:35,908 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0011.jpg'
+2023-08-07 14:12:35,921 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 167109
+2023-08-07 14:12:40,012 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:45,031 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:50,052 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:54,632 [cuckoo.core.resultserver] DEBUG: Task #9 is sending a BSON stream
+2023-08-07 14:12:54,932 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0012.jpg'
+2023-08-07 14:12:54,942 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 164543
+2023-08-07 14:12:55,074 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:12:55,956 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0013.jpg'
+2023-08-07 14:12:55,972 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 170934
+2023-08-07 14:13:00,097 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #9 still processing
+2023-08-07 14:13:00,866 [cuckoo.core.resultserver] DEBUG: Task #9: File upload for 'shots/0014.jpg'
+2023-08-07 14:13:00,875 [cuckoo.core.resultserver] DEBUG: Task #9 uploaded file length: 167631
+2023-08-07 14:13:01,101 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully
+2023-08-07 14:13:01,105 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Replay
+2023-08-07 14:13:01,144 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer
+2023-08-07 14:13:17,659 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/cuckoo/.cuckoo/storage/analyses/9/memory.dmp
+2023-08-07 14:13:17,687 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1
+2023-08-07 14:13:21,883 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.56.101 for task #9
+2023-08-07 14:13:21,883 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 9
+2023-08-07 14:13:21,925 [cuckoo.core.scheduler] DEBUG: Released database task #9
+2023-08-07 14:13:21,929 [cuckoo.core.scheduler] INFO: [36mTask #9: analysis procedure completed[0m
+2023-08-07 14:13:22,565 [cuckoo.core.scheduler] DEBUG: Processing task #10
+2023-08-07 14:13:22,569 [cuckoo.core.scheduler] INFO: Starting analysis of FILE "31786a7267fe896b8dd5caa1aa20711908c0de51af8a87b96f35c2353e093264.exe" (task #10, options "route=internet")
+2023-08-07 14:13:22,596 [cuckoo.core.scheduler] INFO: Task #10: acquired machine cuckoo1 (label=cuckoo1)
+2023-08-07 14:13:22,597 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #10
+2023-08-07 14:13:22,597 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay
+2023-08-07 14:13:22,603 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 8944 (interface=vboxnet0, host=192.168.56.101)
+2023-08-07 14:13:22,603 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer
+2023-08-07 14:13:22,613 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo1
+2023-08-07 14:13:22,668 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to snapshot1
+2023-08-07 14:13:38,604 [cuckoo.core.guest] INFO: Starting analysis #10 on guest (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:13:39,607 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:13:40,610 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:13:41,612 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:13:41,618 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:13:41,630 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo1, ip=192.168.56.101, monitor=latest, size=3884763)
+2023-08-07 14:13:42,041 [cuckoo.core.resultserver] DEBUG: Task #10: live log analysis.log initialized.
+2023-08-07 14:13:42,323 [cuckoo.core.resultserver] DEBUG: Task #10 is sending a BSON stream
+2023-08-07 14:13:42,772 [cuckoo.core.guest] WARNING: [33mcuckoo1: analysis #10 caught an exception
+Traceback (most recent call last):
+  File "C:/tmpnff9u0/analyzer.py", line 808, in <module>
+    success = analyzer.run()
+  File "C:/tmpnff9u0/analyzer.py", line 657, in run
+    pids = self.package.start(self.target)
+  File "C:\tmpnff9u0\modules\packages\exe.py", line 23, in start
+    return self.execute(path, args=shlex.split(args))
+  File "C:\tmpnff9u0\lib\common\abstracts.py", line 166, in execute
+    "Unable to execute the initial process, analysis aborted."
+CuckooPackageError: Unable to execute the initial process, analysis aborted.
+[0m
+2023-08-07 14:13:42,786 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Replay
+2023-08-07 14:13:42,840 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer
+2023-08-07 14:14:00,033 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/cuckoo/.cuckoo/storage/analyses/10/memory.dmp
+2023-08-07 14:14:00,063 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1
+2023-08-07 14:14:04,337 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.56.101 for task #10
+2023-08-07 14:14:04,337 [cuckoo.core.resultserver] DEBUG: Cancel <Context for LOG> for task 10
+2023-08-07 14:14:04,378 [cuckoo.core.scheduler] DEBUG: Released database task #10
+2023-08-07 14:14:04,398 [cuckoo.core.scheduler] INFO: [36mTask #10: analysis procedure completed[0m
+2023-08-07 14:14:04,558 [cuckoo.core.scheduler] DEBUG: Processing task #11
+2023-08-07 14:14:04,576 [cuckoo.core.scheduler] INFO: Starting analysis of FILE "9b83c1efc74833172375826612ca54ccf601b3b2bf24dab96b63da8a41dfbeb8.exe" (task #11, options "route=internet")
+2023-08-07 14:14:04,637 [cuckoo.core.scheduler] INFO: Task #11: acquired machine cuckoo1 (label=cuckoo1)
+2023-08-07 14:14:04,638 [cuckoo.core.resultserver] DEBUG: Now tracking machine 192.168.56.101 for task #11
+2023-08-07 14:14:04,638 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Replay
+2023-08-07 14:14:04,658 [cuckoo.auxiliary.sniffer] INFO: Started sniffer with PID 9161 (interface=vboxnet0, host=192.168.56.101)
+2023-08-07 14:14:04,658 [cuckoo.core.plugins] DEBUG: Started auxiliary module: Sniffer
+2023-08-07 14:14:04,709 [cuckoo.machinery.virtualbox] DEBUG: Starting vm cuckoo1
+2023-08-07 14:14:04,764 [cuckoo.machinery.virtualbox] DEBUG: Restoring virtual machine cuckoo1 to snapshot1
+2023-08-07 14:14:21,371 [cuckoo.core.guest] INFO: Starting analysis #11 on guest (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:14:22,373 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:14:23,376 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:14:24,379 [cuckoo.core.guest] DEBUG: cuckoo1: not ready yet
+2023-08-07 14:14:24,384 [cuckoo.core.guest] INFO: Guest is running Cuckoo Agent 0.10 (id=cuckoo1, ip=192.168.56.101)
+2023-08-07 14:14:24,396 [cuckoo.core.guest] DEBUG: Uploading analyzer to guest (id=cuckoo1, ip=192.168.56.101, monitor=latest, size=3884763)
+2023-08-07 14:14:24,599 [cuckoo.core.resultserver] DEBUG: Task #11: live log analysis.log initialized.
+2023-08-07 14:14:25,161 [cuckoo.core.resultserver] DEBUG: Task #11 is sending a BSON stream
+2023-08-07 14:14:26,068 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0001.jpg'
+2023-08-07 14:14:26,080 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 170777
+2023-08-07 14:14:26,415 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'memory/1540-1.dmp'
+2023-08-07 14:14:26,420 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 2171480
+2023-08-07 14:14:26,484 [cuckoo.core.resultserver] DEBUG: Task #11 is sending a BSON stream
+2023-08-07 14:14:27,120 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0002.jpg'
+2023-08-07 14:14:27,136 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 172211
+2023-08-07 14:14:27,903 [cuckoo.core.resultserver] DEBUG: Task #11 is sending a BSON stream
+2023-08-07 14:14:29,558 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:14:30,205 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0003.jpg'
+2023-08-07 14:14:30,216 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 176088
+2023-08-07 14:14:31,249 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0004.jpg'
+2023-08-07 14:14:31,261 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 176531
+2023-08-07 14:14:33,313 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0005.jpg'
+2023-08-07 14:14:33,324 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 176934
+2023-08-07 14:14:34,356 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0006.jpg'
+2023-08-07 14:14:34,373 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 176531
+2023-08-07 14:14:34,598 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:14:39,623 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:14:44,646 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:14:49,669 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:14:54,690 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:14:59,711 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:15:02,418 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0007.jpg'
+2023-08-07 14:15:02,434 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 176934
+2023-08-07 14:15:03,449 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0008.jpg'
+2023-08-07 14:15:03,459 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 176525
+2023-08-07 14:15:04,732 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:15:09,754 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:15:14,776 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:15:19,807 [cuckoo.core.guest] DEBUG: cuckoo1: analysis #11 still processing
+2023-08-07 14:15:24,248 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'files/ebabce8594c8ceda_cookiesfirefox.txt'
+2023-08-07 14:15:24,249 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 5637
+2023-08-07 14:15:24,512 [cuckoo.core.resultserver] DEBUG: Task #11: File upload for 'shots/0009.jpg'
+2023-08-07 14:15:24,526 [cuckoo.core.resultserver] DEBUG: Task #11 uploaded file length: 175130
+2023-08-07 14:15:24,547 [cuckoo.core.resultserver] DEBUG: Task #11 had connection reset for <Context for LOG>
+2023-08-07 14:15:24,827 [cuckoo.core.guest] INFO: cuckoo1: analysis completed successfully
+2023-08-07 14:15:24,831 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Replay
+2023-08-07 14:15:24,868 [cuckoo.core.plugins] DEBUG: Stopped auxiliary module: Sniffer
+2023-08-07 14:15:41,356 [cuckoo.machinery.virtualbox] INFO: Successfully generated memory dump for virtual machine with label cuckoo1 to path /home/cuckoo/.cuckoo/storage/analyses/11/memory.dmp
+2023-08-07 14:15:41,357 [cuckoo.machinery.virtualbox] DEBUG: Stopping vm cuckoo1
+2023-08-07 14:15:45,499 [cuckoo.core.resultserver] DEBUG: Stopped tracking machine 192.168.56.101 for task #11
+2023-08-07 14:15:45,532 [cuckoo.core.scheduler] DEBUG: Released database task #11
+2023-08-07 14:15:45,536 [cuckoo.core.scheduler] INFO: [36mTask #11: analysis procedure completed[0m

@@ -1,0 +1,894 @@
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+[sudo] password for cuckoo: /usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-07 12:59:50,306 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-07 13:00:01,323 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-07 13:00:01,323 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:00:01,326 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-07 13:00:01,326 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:01,328 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:01,331 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-07 13:00:01,331 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:01,334 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 13:00:01,336 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-07 13:00:01,338 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-07 13:00:01,339 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:01,341 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:01,343 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-07 13:00:01,343 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:01,346 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-07 13:00:01,346 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-07 13:00:01,348 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-07 13:00:01,348 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-07 13:00:01,350 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-07 13:00:01,352 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-07 13:00:01,354 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-07 13:00:01,357 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-07 13:00:02,471 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-07 13:00:02,471 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:02,474 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,057 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-07 13:00:09,057 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,060 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-07 13:00:09,060 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,063 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,065 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-07 13:00:09,065 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,068 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 13:00:09,071 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-07 13:00:09,073 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-07 13:00:09,073 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,075 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,078 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-07 13:00:09,078 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,081 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-07 13:00:09,081 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-07 13:00:09,083 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-07 13:00:09,084 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-07 13:00:09,086 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-07 13:00:09,088 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-07 13:00:09,090 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-07 13:00:09,093 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-07 13:00:09,741 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-07 13:00:09,741 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,744 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-07 13:00:09,744 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,746 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,750 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-07 13:00:09,750 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,753 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 13:00:09,755 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-07 13:00:09,758 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-07 13:00:09,758 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,760 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,762 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-07 13:00:09,763 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:00:09,765 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-07 13:00:09,765 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-07 13:00:09,768 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-07 13:00:09,768 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-07 13:00:09,770 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-07 13:00:09,772 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-07 13:00:09,774 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-07 13:00:09,777 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+[sudo] password for cuckoo: /usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-07 13:50:06,715 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-07 13:50:17,583 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-07 13:50:17,583 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:50:17,586 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-07 13:50:17,586 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:17,588 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:17,591 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-07 13:50:17,591 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:17,594 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 13:50:17,596 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-07 13:50:17,598 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-07 13:50:17,599 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:17,601 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:17,603 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-07 13:50:17,603 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:17,606 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-07 13:50:17,606 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-07 13:50:17,608 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-07 13:50:17,608 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-07 13:50:17,610 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-07 13:50:17,612 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-07 13:50:17,615 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-07 13:50:17,617 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-07 13:50:18,689 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-07 13:50:18,690 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:18,693 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,484 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-07 13:50:25,485 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,488 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-07 13:50:25,488 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,490 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,493 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-07 13:50:25,493 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,496 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 13:50:25,498 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-07 13:50:25,501 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-07 13:50:25,501 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,503 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,506 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-07 13:50:25,506 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:25,509 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-07 13:50:25,509 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-07 13:50:25,511 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-07 13:50:25,511 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-07 13:50:25,514 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-07 13:50:25,516 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-07 13:50:25,519 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-07 13:50:25,521 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-07 13:50:26,168 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-07 13:50:26,168 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:50:26,171 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-07 13:50:26,171 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:26,174 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:26,177 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-07 13:50:26,178 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:50:26,181 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 13:50:26,183 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-07 13:50:26,186 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-07 13:50:26,186 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:26,188 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:26,191 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-07 13:50:26,191 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-07 13:50:26,194 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-07 13:50:26,194 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-07 13:50:26,196 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-07 13:50:26,196 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-07 13:50:26,198 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-07 13:50:26,201 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-07 13:50:26,203 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-07 13:50:26,205 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-07 13:51:40,537 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 13:51:40,540 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 13:51:40,540 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,546 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,549 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,552 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,554 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-07 13:51:40,555 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,557 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,559 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,562 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:51:40,565 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-07 13:51:40,565 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-07 13:51:40,567 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 13:52:12,253 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-07 13:52:12,253 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:52:12,256 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:52:12,260 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-07 13:52:12,260 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-07 13:52:12,263 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 13:52:12,266 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 13:52:12,266 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:52:12,269 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 13:52:12,272 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 13:52:12,275 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,728 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 14:10:19,731 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:10:19,732 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,734 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,737 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,740 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,742 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:10:19,743 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,745 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,747 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,749 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:10:19,752 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-07 14:10:19,752 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-07 14:10:19,754 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:11:38,358 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:11:38,473 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:38,486 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:38,489 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-07 14:11:38,489 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-07 14:11:38,494 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:11:38,498 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:11:38,498 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:38,502 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:38,505 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:11:38,508 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,275 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 14:11:56,278 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:11:56,278 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,282 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,284 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,287 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,405 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:11:56,406 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,416 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,426 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,436 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:11:56,447 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-07 14:11:56,448 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-07 14:11:56,457 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:13:21,884 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:13:21,902 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:21,905 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:21,908 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-07 14:13:21,908 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-07 14:13:21,910 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:13:21,912 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:13:21,912 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:21,915 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:21,917 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:13:21,919 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,556 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 14:13:38,560 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:13:38,560 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,564 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,567 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,570 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,574 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:13:38,574 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,578 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,581 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,584 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:13:38,587 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-07 14:13:38,587 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-07 14:13:38,590 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:14:04,337 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:14:04,353 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:04,356 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:04,359 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-07 14:14:04,359 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-07 14:14:04,362 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:14:04,364 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:14:04,364 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:04,367 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:04,369 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:14:04,371 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,332 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-07 14:14:21,336 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:14:21,336 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,339 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,342 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,345 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,347 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:14:21,348 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,350 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,352 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,355 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:14:21,358 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-07 14:14:21,358 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-07 14:14:21,360 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:15:45,500 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-07 14:15:45,508 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:15:45,511 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:15:45,514 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-07 14:15:45,514 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-07 14:15:45,516 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-07 14:15:45,519 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-07 14:15:45,519 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:15:45,521 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-07 14:15:45,524 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-07 14:15:45,526 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+[sudo] password for cuckoo: /usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-08 15:21:27,565 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-08 15:21:38,683 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-08 15:21:38,684 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-08 15:21:38,687 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-08 15:21:38,687 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:38,690 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:38,693 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-08 15:21:38,693 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:38,695 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-08 15:21:38,698 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-08 15:21:38,701 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-08 15:21:38,701 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:38,703 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:38,706 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-08 15:21:38,706 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:38,709 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-08 15:21:38,709 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-08 15:21:38,711 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-08 15:21:38,711 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-08 15:21:38,713 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-08 15:21:38,716 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-08 15:21:38,718 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-08 15:21:38,720 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-08 15:21:39,471 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-08 15:21:39,471 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:39,477 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,301 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-08 15:21:46,301 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,304 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-08 15:21:46,304 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,306 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,309 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-08 15:21:46,309 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,312 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-08 15:21:46,315 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-08 15:21:46,317 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-08 15:21:46,318 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,320 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,323 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-08 15:21:46,323 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:46,325 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-08 15:21:46,326 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-08 15:21:46,328 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-08 15:21:46,328 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-08 15:21:46,331 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-08 15:21:46,333 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-08 15:21:46,335 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-08 15:21:46,338 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-08 15:21:47,057 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-08 15:21:47,057 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-08 15:21:47,061 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-08 15:21:47,061 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:47,063 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:47,066 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-08 15:21:47,066 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-08 15:21:47,069 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-08 15:21:47,072 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-08 15:21:47,075 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-08 15:21:47,075 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:47,077 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:47,080 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-08 15:21:47,080 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-08 15:21:47,083 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-08 15:21:47,083 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-08 15:21:47,085 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-08 15:21:47,085 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-08 15:21:47,088 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-08 15:21:47,090 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-08 15:21:47,093 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-08 15:21:47,095 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-09 19:54:31,392 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 19:54:31,395 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:54:31,396 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,398 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,401 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,404 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,407 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:54:31,407 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,409 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,412 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,414 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:54:31,417 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 19:54:31,417 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 19:54:31,419 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:55:56,583 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:55:56,583 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:55:56,589 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:55:56,598 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 19:55:56,598 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 19:55:56,606 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:55:56,614 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:55:56,615 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:55:56,623 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:55:56,632 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:55:56,640 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,363 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 19:56:13,366 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:56:13,367 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,371 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,374 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,376 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,379 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:56:13,379 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,381 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,384 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,388 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:13,391 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 19:56:13,391 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 19:56:13,393 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:56:55,629 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:56:55,639 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:55,642 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:55,645 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 19:56:55,645 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 19:56:55,647 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:56:55,649 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:56:55,650 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:55,652 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:56:55,654 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:56:55,657 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,148 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 19:57:12,153 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:57:12,153 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,157 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,161 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,164 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,168 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:57:12,169 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,172 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,175 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,178 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:12,181 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 19:57:12,182 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 19:57:12,185 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:57:48,514 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:57:48,542 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:48,546 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:48,549 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 19:57:48,549 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 19:57:48,551 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:57:48,554 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:57:48,554 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:48,556 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:57:48,559 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:57:48,561 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,035 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 19:58:04,038 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:58:04,038 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,041 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,044 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,047 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,050 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:58:04,051 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,053 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,056 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,058 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:04,060 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 19:58:04,061 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 19:58:04,063 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:58:31,683 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:58:31,701 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:31,705 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:31,707 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 19:58:31,707 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 19:58:31,710 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 19:58:31,712 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:58:31,712 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:31,715 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:31,718 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:58:31,720 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,223 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 19:58:49,228 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 19:58:49,228 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,233 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,237 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,242 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,245 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 19:58:49,246 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,250 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,254 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,258 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 19:58:49,262 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 19:58:49,262 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 19:58:49,266 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:00:19,913 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 20:00:20,032 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:20,042 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:20,044 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 20:00:20,044 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 20:00:20,046 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:00:20,049 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 20:00:20,049 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:20,051 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:20,054 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:00:20,057 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,137 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 20:00:37,141 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 20:00:37,141 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,144 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,147 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,150 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,153 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 20:00:37,153 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,156 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,159 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,162 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:00:37,165 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 20:00:37,165 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 20:00:37,168 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:01:45,678 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 20:01:45,781 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:01:45,791 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:01:45,793 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 20:01:45,793 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 20:01:45,795 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:01:45,798 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 20:01:45,798 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:01:45,800 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:01:45,803 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:01:45,805 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,680 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 20:02:03,685 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 20:02:03,685 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,691 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,695 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,699 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,704 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 20:02:03,704 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,708 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,712 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,716 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:02:03,719 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 20:02:03,720 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 20:02:03,723 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:03:27,953 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 20:03:27,968 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:27,976 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:27,978 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 20:03:27,979 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 20:03:27,981 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:03:27,984 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 20:03:27,984 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:27,986 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:27,989 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:03:27,991 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,080 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-09 20:03:45,099 [cuckoo.apps.rooter] INFO: Processing command: drop_enable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 20:03:45,099 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,102 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,104 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,106 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,109 [cuckoo.apps.rooter] INFO: Processing command: forward_enable vboxnet0 eno1 192.168.56.101 
+2023-08-09 20:03:45,109 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,112 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -o vboxnet0 -j REJECT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,115 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,118 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:03:45,121 [cuckoo.apps.rooter] INFO: Processing command: srcroute_enable vboxnet0 192.168.56.101 
+2023-08-09 20:03:45,121 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule add from 192.168.56.101 table vboxnet0
+2023-08-09 20:03:45,124 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:04:16,700 [cuckoo.apps.rooter] INFO: Processing command: forward_disable vboxnet0 eno1 192.168.56.101 
+2023-08-09 20:04:16,720 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i vboxnet0 -o eno1 --source 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:04:16,723 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D FORWARD -i eno1 -o vboxnet0 --destination 192.168.56.101 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:04:16,725 [cuckoo.apps.rooter] INFO: Processing command: srcroute_disable vboxnet0 192.168.56.101 
+2023-08-09 20:04:16,726 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip rule del from 192.168.56.101 table vboxnet0
+2023-08-09 20:04:16,728 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush cache
+2023-08-09 20:04:16,730 [cuckoo.apps.rooter] INFO: Processing command: drop_disable 192.168.56.101 192.168.56.1 2042 
+2023-08-09 20:04:16,730 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -p tcp --destination 192.168.56.1 --dport 2042 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:04:16,733 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.1 -p tcp --destination 192.168.56.101 --dport 8000 -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-09 20:04:16,735 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+2023-08-09 20:04:16,737 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D OUTPUT --source 192.168.56.101 -j DROP -m comment --comment cuckoo-rooter
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+[sudo] password for cuckoo: /usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-10 13:06:00,148 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-10 13:06:18,286 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-10 13:06:18,286 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-10 13:06:18,292 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-10 13:06:18,293 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:06:18,296 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:06:18,299 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-10 13:06:18,299 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:06:18,302 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-10 13:06:18,309 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-10 13:06:18,312 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-10 13:06:18,312 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:06:18,315 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:06:18,318 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-10 13:06:18,318 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:06:18,321 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-10 13:06:18,321 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-10 13:06:18,324 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-10 13:06:18,324 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-10 13:06:18,326 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-10 13:06:18,329 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-10 13:06:18,331 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-10 13:06:18,334 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-10 13:06:19,154 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-10 13:06:19,154 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-10 13:06:19,157 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-10 13:06:19,157 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:06:19,160 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:06:19,162 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-10 13:06:19,163 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:06:19,165 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-10 13:06:19,168 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-10 13:06:19,170 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-10 13:06:19,170 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:06:19,173 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:06:19,175 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-10 13:06:19,175 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:06:19,178 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-10 13:06:19,178 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-10 13:06:19,180 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-10 13:06:19,180 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-10 13:06:19,182 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-10 13:06:19,184 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-10 13:06:19,187 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-10 13:06:19,189 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+[sudo] password for cuckoo: /usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-10 13:08:17,859 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-10 13:08:36,585 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-10 13:08:36,585 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-10 13:08:36,589 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-10 13:08:36,589 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:08:36,591 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:08:36,594 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-10 13:08:36,594 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:08:36,597 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-10 13:08:36,600 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-10 13:08:36,603 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-10 13:08:36,603 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:08:36,605 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:08:36,608 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-10 13:08:36,608 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:08:36,611 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-10 13:08:36,611 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-10 13:08:36,614 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-10 13:08:36,614 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-10 13:08:36,617 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-10 13:08:36,619 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-10 13:08:36,622 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-10 13:08:36,624 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-10 13:08:37,277 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-10 13:08:37,277 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-10 13:08:37,281 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-10 13:08:37,281 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:08:37,283 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:08:37,286 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-10 13:08:37,286 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-10 13:08:37,289 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-10 13:08:37,291 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-10 13:08:37,294 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-10 13:08:37,294 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:08:37,296 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:08:37,299 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-10 13:08:37,299 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-10 13:08:37,302 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-10 13:08:37,302 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-10 13:08:37,304 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-10 13:08:37,304 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-10 13:08:37,306 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-10 13:08:37,309 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-10 13:08:37,311 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-10 13:08:37,313 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-17 01:16:19,168 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-17 01:16:38,531 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-17 01:16:38,531 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-17 01:16:38,534 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-17 01:16:38,534 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:16:38,539 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-17 01:16:38,539 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:16:38,544 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-17 01:16:38,547 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-17 01:16:38,549 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-17 01:16:38,549 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:16:38,552 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-17 01:16:38,552 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:16:38,555 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-17 01:16:38,555 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-17 01:16:38,557 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-17 01:16:38,557 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-17 01:16:38,559 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-17 01:16:38,562 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-17 01:16:38,564 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-17 01:16:38,567 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-17 01:16:39,247 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-17 01:16:39,247 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-17 01:16:39,250 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-17 01:16:39,250 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:16:39,252 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:16:39,255 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-17 01:16:39,255 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:16:39,257 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-17 01:16:39,259 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-17 01:16:39,262 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-17 01:16:39,262 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:16:39,264 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:16:39,266 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-17 01:16:39,266 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:16:39,268 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-17 01:16:39,269 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-17 01:16:39,271 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-17 01:16:39,271 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-17 01:16:39,273 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-17 01:16:39,275 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-17 01:16:39,277 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-17 01:16:39,280 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-17 01:22:14,754 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-17 01:22:34,490 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-17 01:22:34,490 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-17 01:22:34,493 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-17 01:22:34,493 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:22:34,495 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:22:34,498 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-17 01:22:34,498 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:22:34,500 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-17 01:22:34,503 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-17 01:22:34,505 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-17 01:22:34,505 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:22:34,507 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:22:34,510 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-17 01:22:34,510 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:22:34,512 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-17 01:22:34,513 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-17 01:22:34,515 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-17 01:22:34,515 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-17 01:22:34,517 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-17 01:22:34,520 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-17 01:22:34,522 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-17 01:22:34,524 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-17 01:24:40,516 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-17 01:25:00,255 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-17 01:25:00,255 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,258 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-17 01:25:00,258 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,260 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,263 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-17 01:25:00,263 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,265 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-17 01:25:00,268 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-17 01:25:00,270 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-17 01:25:00,270 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,273 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,275 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-17 01:25:00,275 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,278 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-17 01:25:00,278 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-17 01:25:00,280 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-17 01:25:00,280 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-17 01:25:00,283 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-17 01:25:00,285 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-17 01:25:00,287 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-17 01:25:00,290 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-17 01:25:00,922 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-17 01:25:00,922 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,924 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-17 01:25:00,925 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,927 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,929 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-17 01:25:00,929 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,932 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-17 01:25:00,934 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-17 01:25:00,936 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-17 01:25:00,936 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,939 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,941 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-17 01:25:00,941 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:25:00,943 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-17 01:25:00,943 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-17 01:25:00,946 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-17 01:25:00,946 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-17 01:25:00,948 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-17 01:25:00,950 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-17 01:25:00,952 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-17 01:25:00,955 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-17 01:27:33,251 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-17 01:27:52,986 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-17 01:27:52,987 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-17 01:27:52,989 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-17 01:27:52,989 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:27:52,992 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:27:52,994 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-17 01:27:52,994 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:27:52,997 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-17 01:27:52,999 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-17 01:27:53,002 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-17 01:27:53,002 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,004 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,006 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-17 01:27:53,007 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,009 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-17 01:27:53,009 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-17 01:27:53,012 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-17 01:27:53,012 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-17 01:27:53,014 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-17 01:27:53,016 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-17 01:27:53,018 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-17 01:27:53,021 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-17 01:27:53,653 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-17 01:27:53,653 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,656 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-17 01:27:53,656 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,658 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,661 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-17 01:27:53,661 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,663 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-17 01:27:53,665 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-17 01:27:53,668 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-17 01:27:53,668 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,670 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,672 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-17 01:27:53,673 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-17 01:27:53,675 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-17 01:27:53,675 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-17 01:27:53,678 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-17 01:27:53,678 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-17 01:27:53,680 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-17 01:27:53,682 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-17 01:27:53,684 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-17 01:27:53,686 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-17 01:42:40,627 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables-save
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-31 15:27:35,285 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-31 15:28:07,809 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables-save
+spawn bash -c nohup cuckoo -d rooter --sudo --group cuckoo >> ./log/rooter.log
+nohup: ignoring input and redirecting stderr to stdout
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+[sudo] password for cuckoo: 
+/usr/local/lib/python2.7/dist-packages/sflock/decode/office.py:12: CryptographyDeprecationWarning: Python 2 is no longer supported by the Python core team. Support for it is now deprecated in cryptography, and will be removed in the next release.
+  from cryptography.hazmat.backends import default_backend
+2023-08-31 15:32:55,524 [cuckoo] INFO: Starting Cuckoo Rooter (group=cuckoo)!
+2023-08-31 15:34:07,767 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-31 15:34:07,767 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-31 15:34:07,770 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-31 15:34:07,771 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-31 15:34:07,780 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-31 15:34:07,781 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-31 15:34:07,787 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-31 15:34:07,790 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-31 15:34:07,797 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-31 15:34:07,797 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-31 15:34:07,800 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-31 15:34:07,800 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-31 15:34:07,802 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-31 15:34:07,803 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-31 15:34:07,805 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-31 15:34:07,805 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-31 15:34:07,807 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-31 15:34:07,810 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-31 15:34:07,812 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-31 15:34:07,815 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
+2023-08-31 15:34:08,720 [cuckoo.apps.rooter] INFO: Processing command: forward_drop  
+2023-08-31 15:34:08,720 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -P FORWARD DROP -m comment --comment cuckoo-rooter
+2023-08-31 15:34:08,723 [cuckoo.apps.rooter] INFO: Processing command: state_disable  
+2023-08-31 15:34:08,723 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-31 15:34:08,725 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -D INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-31 15:34:08,728 [cuckoo.apps.rooter] INFO: Processing command: state_enable  
+2023-08-31 15:34:08,728 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT -m comment --comment cuckoo-rooter
+2023-08-31 15:34:08,730 [cuckoo.apps.rooter] INFO: Processing command: nic_available eno1 
+2023-08-31 15:34:08,733 [cuckoo.apps.rooter] INFO: Processing command: rt_available vboxnet0 
+2023-08-31 15:34:08,735 [cuckoo.apps.rooter] INFO: Processing command: disable_nat eno1 
+2023-08-31 15:34:08,735 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-31 15:34:08,737 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -D POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-31 15:34:08,739 [cuckoo.apps.rooter] INFO: Processing command: enable_nat eno1 
+2023-08-31 15:34:08,739 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/iptables -t nat -A POSTROUTING -o eno1 -j MASQUERADE -m comment --comment cuckoo-rooter
+2023-08-31 15:34:08,742 [cuckoo.apps.rooter] INFO: Processing command: flush_rttable vboxnet0 
+2023-08-31 15:34:08,742 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route flush table vboxnet0
+2023-08-31 15:34:08,744 [cuckoo.apps.rooter] INFO: Processing command: init_rttable vboxnet0 eno1 
+2023-08-31 15:34:08,744 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route list dev eno1
+2023-08-31 15:34:08,746 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add default via 192.168.0.1 proto static metric 100 dev eno1 table vboxnet0
+2023-08-31 15:34:08,749 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 169.254.0.0/16 scope link metric 1000 dev eno1 table vboxnet0
+2023-08-31 15:34:08,751 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add 192.168.0.0/24 proto kernel scope link src 192.168.0.80 metric 100 dev eno1 table vboxnet0
+2023-08-31 15:34:08,753 [cuckoo.apps.rooter] DEBUG: Running command: /sbin/ip route add dev eno1 table vboxnet0
