@@ -9,12 +9,14 @@
 END
 
 # log variables
-curPwd=$(pwd)
-logDir="$curPwd/log/debugLog/"
+cd ..
+dAMADRoot=$(pwd)
+cd ./autorun
+logDir="$daMADRoot/log/debugLog/"
 logFileName="[$(date +%Y-%m-%d)]_dAMAS-debug.log"
 logFileDir="$logDir$logFileName"
 
-cuckooRooter="$curPwd/autorun/cuckooRooter.sh"
+cuckooRooter="$dAMADRoot/autorun/cuckooRooter.sh"
 
 
 echo ""
