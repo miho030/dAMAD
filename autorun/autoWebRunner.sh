@@ -1,8 +1,10 @@
 #!/bin/bash
 
 # log variables
-curPwd=$(pwd)
-logDir="$curPwd/log/webLog/"
+cd ..
+dAMADRoot=$(pwd)
+cd ./autorun
+logDir="$dAMADRoot/log/webLog/"
 logFileName="[$(date +%Y-%m-%d)]_dAMAS-web.log"
 logFileDir="$logDir$logFileName"
 
